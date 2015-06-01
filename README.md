@@ -1,4 +1,4 @@
-### **Bender**
+## **Bender**
 **Bender** is a framework to apply the visitor design pattern to abstract source entities.  
 The default project contains the implementation for Java beans.
 
