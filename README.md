@@ -77,3 +77,6 @@ To use the XML or any other bender source you can see the following code snippet
     BenderXmlSource source = new BenderXmlSource(stream);
     source.accept(new PersonXmlVisitor());
     
+
+
+*For detailed info and advanced features see the wiki pages.*
