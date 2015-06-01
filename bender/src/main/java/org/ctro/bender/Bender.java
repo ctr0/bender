@@ -70,7 +70,7 @@ import java.lang.annotation.Target;
 import org.ctro.bender.beans.BenderBeanSource;
 
 /**
- * <b>Bender</b> is a framework 
+ * <b>Bender</b> is a framework to apply visitor pattern to java beans.
  * 
  * 
  * @author Jordi Carretero
