@@ -5,6 +5,7 @@ The default project contains the implementation for Java beans.
 To apply the visitor design pattern you only need to write a visitor class for the desired abstract source.
 
 #### **Bender Beans**
+*Visitor design pattern for Java beans.*
 For the following Java bean:
 
     public class Person {
@@ -49,26 +50,29 @@ Visitors can be stacked to accept the method target property simply returning a 
 
 
 #### **Bender XML**
+*Visitor design pattern for XML streams.*
 
     public class PersonXmlVisitor implements BenderVisitor {
-	
-	    @BenderXml("/persons")
-	    public void visitStart() {
-		    // Do something...
-	    }
-	
-	    @BenderXml("persons/person/")
-	    public void visitPerson(@BenderXml("name") String name, @BenderXml("age") int age) {
-		     // Do something...
-	    }
+        
+        @BenderXml("/person")
+        public void visitPerson(@BenderXml("name") String name, @BenderXml("age") int age) {
+            // Do something...
+        }
 	    
-	    @BenderXml("persons/person/parent")
-	    public void visitParent(@BenderXml("name") String name, @BenderXml("age") int age) {
-		     // Do something...
-	    }
+        @BenderXml("person/parent")
+        public void visitParent(@BenderXml("name") String name, @BenderXml("age") int age) {
+            // Do something...
+        }
 
-	    @Override
+        @Override
         public void visitEnd() {
-		    // Do something...
-	    }
+            // Do something...
+        }
     }
+
+To use the XML or any other bender source you can see the following code snippet:
+
+    BenderSession session = new BenderSession();
+    BenderXmlSource source = new BenderXmlSource(stream);
+    source.accept(new PersonXmlVisitor());
+    
