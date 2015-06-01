@@ -1,0 +1,6 @@
+<test>
+	<tag1 string="string1" number="1">
+		<tag11 string="string11" number="1.1"></tag11>
+		<tag12 string="string11" number="1.2"></tag12>
+	</tag1>
+</test>
