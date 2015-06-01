@@ -1,6 +1,6 @@
 ### **Bender**
 **Bender** is a framework to apply the visitor design pattern to abstract source entities.  
-The default project contains the source for Java beans.
+The default project contains the implementation for Java beans.
 
 To apply the visitor design pattern you only need to write a visitor class for the desired abstract source.
 
@@ -38,6 +38,7 @@ You can write a visitor like:
             return null;
         }
 
+        @Override
         public void visitEnd() {
             // Do something...
         }
@@ -48,3 +49,26 @@ Visitors can be stacked to accept the method target property simply returning a 
 
 
 #### **Bender XML**
+
+    public class PersonXmlVisitor implements BenderVisitor {
+	
+	    @BenderXml("/persons")
+	    public void visitStart() {
+		    // Do something...
+	    }
+	
+	    @BenderXml("persons/person/")
+	    public void visitPerson(@BenderXml("name") String name, @BenderXml("age") int age) {
+		     // Do something...
+	    }
+	    
+	    @BenderXml("persons/person/parent")
+	    public void visitParent(@BenderXml("name") String name, @BenderXml("age") int age) {
+		     // Do something...
+	    }
+
+	    @Override
+        public void visitEnd() {
+		    // Do something...
+	    }
+    }
