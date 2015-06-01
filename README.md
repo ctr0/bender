@@ -5,7 +5,8 @@ The default project contains the implementation for Java beans.
 To apply the visitor design pattern you only need to write a visitor class for the desired abstract source.
 
 #### **Bender Beans**
-*Visitor design pattern for Java beans.*
+*Visitor design pattern for Java beans.*    
+
 For the following Java bean:
 
     public class Person {
